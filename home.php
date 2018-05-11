@@ -5,11 +5,14 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3 border">
+        <div class="col-md-2 border">
           <?php include '_nav.php'; ?>
         </div>
-        <div class="col-md-9 border">
+        <div class="col-md-7 border">
           <?php include '_maincontent.php'; ?>
+        </div>
+        <div class="col-md-3 border">
+
         </div>
 
       </div>

@@ -1,6 +1,5 @@
 <?php
 
-include 'dbconn.php';
 
 $product_cat = urldecode($_GET['product_catagory']);
 
