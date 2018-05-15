@@ -12,7 +12,7 @@
           <?php include '_maincontent.php'; ?>
         </div>
         <div class="col-md-3 border">
-
+          <?php include 'order_summary.php' ?>
         </div>
 
       </div>
