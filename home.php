@@ -17,6 +17,7 @@
               <tr>
                 <th>Product Name</th>
                 <th>Price</th>
+                <th>Qty</th>
               </tr>
             </thead>
             <tbody>
