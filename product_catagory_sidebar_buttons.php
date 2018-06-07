@@ -9,7 +9,7 @@ if($result = mysqli_query($conn, $sql)){
     }
     mysqli_free_result($result);
   }else{
-    echo "This did not work";
+    echo "This did not work!";
   }
 
 }
