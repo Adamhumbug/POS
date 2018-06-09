@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT DISTINCT (product_catagory) FROM products";
+$sql = "SELECT DISTINCT product_catagory FROM products GROUP BY product_catagory ORDER BY product_catagory ASC";
 
 if($result = mysqli_query($conn, $sql)){
   if(mysqli_num_rows($result) > 0){
@@ -9,7 +9,7 @@ if($result = mysqli_query($conn, $sql)){
     }
     mysqli_free_result($result);
   }else{
-    echo "This did not work";
+    echo "This did not work!";
   }
 
 }

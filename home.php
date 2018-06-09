@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
+home page
 <?php include '_header.php'; ?>
+
 
     <div class="container-fluid">
       <div class="row">
