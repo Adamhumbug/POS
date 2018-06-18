@@ -2,7 +2,7 @@
 
 $product_cat = urldecode($_GET['product_catagory']);
 
-$sql = "SELECT * FROM products WHERE product_catagory = '$product_cat' order by product_name asc";
+$sql = "SELECT * FROM pos_pr WHERE product_catagory = '$product_cat' order by product_name asc";
 
 if($result = mysqli_query($conn, $sql)){
   if(mysqli_num_rows($result) > 0){

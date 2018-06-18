@@ -16,7 +16,7 @@ products page
 <?php
 
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM pos_pr";
 
 if($result = mysqli_query($conn, $sql)){
   if(mysqli_num_rows($result) > 0){
