@@ -10,7 +10,7 @@ products page
         <div class="col-md-2 border">
           <?php include '_nav.php'; ?>
         </div>
-        <div class="col-md-7 border">
+        <div class="col-md-8 border">
 
 <!--New procuct stuff goes here-->
 <?php
@@ -20,22 +20,27 @@ $sql = "SELECT * FROM products";
 
 if($result = mysqli_query($conn, $sql)){
   if(mysqli_num_rows($result) > 0){
+    echo "<input id='all_products_search_bar' type='text' id='myInput' onkeyup='searchProductTable()' placeholder='Search for product name..'>";
     echo "<table id='all_products_table' class='table table-hover'><tr>";
     echo "<th onclick='sortTable(0)'>Product ID</th>";
     echo "<th onclick='sortTable(1)'>Product Name</th>";
     echo "<th onclick='sortTable(2)'>Product Price</th>";
     echo "<th onclick='sortTable(3)'>Product Catagory</th>";
+    echo "<th onclick='sortTable(4)'>Product Qty</th>";
     echo "</tr>";
+
     while($row = mysqli_fetch_array($result)){
       echo "<tr>";
       echo "<td>" . $row['product_id'] . "</td>";
       echo "<td>" . $row['product_name'] . "</td>";
       echo "<td>" . $row['product_price'] . "</td>";
       echo "<td>" . $row['product_catagory'] . "</td>";
+      echo "<td>" . $row['product_qty'] . "</td>";
       echo "</tr>";
 
     }
     echo "</table>";
+    echo "<button class='btn btn-secondary' onclick='editable()'>Make Table Editable</button>";
     mysqli_free_result($result);
   }else{
     echo "<p class='all_products_error'>There are no poducts to show</p>";
@@ -45,6 +50,11 @@ if($result = mysqli_query($conn, $sql)){
 
 
  ?>
+ <script>
+ function editable() {
+    document.getElementById("all_products_table").contentEditable = true;
+}
+</script>
  <script>
  function sortTable(n) {
    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -102,10 +112,33 @@ if($result = mysqli_query($conn, $sql)){
  }
  </script>
 
+ <script>
+function searchProductTable() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("all_products_search_bar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("all_products_table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
         </div>
-        <div class="col-md-3 border">
-<!--This can probably go-->
-              <?php include 'order_summary.php' ?>
+        <div class="col-md-2 border">
+
+              <?php include 'product_right_nav.php'; ?>
 
         </div>
 

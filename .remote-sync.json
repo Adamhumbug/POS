@@ -1,0 +1,19 @@
+{
+  "logger": {
+    "title": "Remote Sync"
+  },
+  "transport": "scp",
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "watch": [],
+  "port": "22",
+  "hostname": "home742272110.1and1-data.host",
+  "username": "u93980436",
+  "password": "Aimington0!",
+  "target": "/"
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
-home page
+add new product
 <?php include '_header.php'; ?>
 
 
@@ -10,12 +10,14 @@ home page
         <div class="col-md-2 border">
           <?php include '_nav.php'; ?>
         </div>
-        <div class="col-md-7 border">
-          <?php include '_maincontent.php'; ?>
-        </div>
-        <div class="col-md-3 border">
+        <div class="col-md-8 border">
 
-              <?php include 'order_summary.php'; ?>
+        <?php include 'add_new_product.php' ?>
+
+        </div>
+        <div class="col-md-2 border">
+
+<?php include 'product_right_nav.php'; ?>
 
         </div>
 
@@ -23,7 +25,7 @@ home page
       <div class="row">
         <div class="col-md-12">
 
-          <?php include '_footer.php'; ?>
+          <?php include '_footer.php' ?>
         </div>
 
       </div>
