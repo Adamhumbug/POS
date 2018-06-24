@@ -23,8 +23,7 @@ echo "<table class='table table-striped'>
     while($row = mysqli_fetch_array($result)){
       echo "<tr><td>" . $row['product_name'] ."</td><td>". $row['product_price'] . "</td><td>" . $row['product_qty'] . "</td></tr>";
     }
-echo "</tbody>
-</table>";
+echo "</tbody></table>";
     mysqli_free_result($result);
   }else{
     echo "There is nothing to show in this summary";
