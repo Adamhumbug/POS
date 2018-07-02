@@ -18,7 +18,7 @@ if($result = mysqli_query($conn, $sql)){
     echo "</form>";
     mysqli_free_result($result);
   }else{
-    echo "<p id='noProductsToShow'>There are no poducts catagories to show</p>";
+    echo "<p id='noProductsToShow'>Pick a product catagory</p>";
   }
 
 }
@@ -27,9 +27,11 @@ if($result = mysqli_query($conn, $sql)){
  ?>
 
 <script type="text/javascript">
-/*attach a submit handler to submit button */
-$("#add_product_to_basket_form").submit(function(event){
-  
-})
-
+function product_into_form( value )
+{
+  document.getElementById('id')
+var previousVal = document.getElementById("form_password").value;
+previousVal = previousVal + number.value;
+document.getElementById("form_password").value = previousVal;
+ }
 </script>

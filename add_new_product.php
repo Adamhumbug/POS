@@ -1,6 +1,6 @@
 <p>Use the form below to add new products to the database</p>
 
-<form action="add_new_product_action.php" class="" method="post">
+<form action="actions/add_new_product_action.php" class="" method="post">
   <div class="row">
     <div class="col">
       <input id="product_name" class="form-control" type="text" name="product_name" value="" placeholder="Product Name">
@@ -15,7 +15,7 @@
       <input id="product_qty" class="form-control" type="text" name="product_qty" value="" placeholder="Product Qty">
     </div>
     <div class="col">
-      <input type="submit" name="buton11" value="Add Product">
+      <input type="submit" name="new_product_submit" value="Add Product">
     </div>
   </div>
 

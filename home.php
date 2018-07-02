@@ -1,15 +1,18 @@
-<?php session_start();
-if(!isset($_SESSION['usr_name']) || empty($_SESSION['usr_name'])){
-	// If session variable is not set it will redirect to login page
-header("location:index.php");
-echo "this is fucked";
+<?php
+Session_start();
+if(isset($_SESSION['usr_name'])){
+echo "User = ". $_SESSION['usr_name'] . "<br/>";
+}else{
+  header("Location:index.php");
+
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
-home page
+Home Page
 <?php include '_header.php'; ?>
 
     <div class="container-fluid">
@@ -35,5 +38,5 @@ home page
 
       </div>
     </div>
-<a class="btn btn-primary" href="logout.php">LOGOUT</a>
-<?php echo $_SESSION['usr_name']; ?>
+
+    <a class="btn btn-primary" href="actions/logoff_actions.php">LOG OFF</a>
