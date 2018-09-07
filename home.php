@@ -1,31 +1,37 @@
-<?php
-Session_start();
-if(isset($_SESSION['usr_name'])){
-echo "User = ". $_SESSION['usr_name'] . "<br/>";
-}else{
-  header("Location:index.php");
-
-}
+<?php session_start();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
-Home Page
+
+<br>
 <?php include '_header.php'; ?>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2 border">
-          <?php include '_nav.php'; ?>
+          <?php include 'actions/show_product_catagory_sidebar_buttons_action.php'; ?>
+          <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
         </div>
         <div class="col-md-7 border">
-          <?php include '_maincontent.php'; ?>
+          <?php
+
+          if (strpos($_SERVER['REQUEST_URI'], "product") == false){
+            $product_cat = $setFirstArray;
+          }else{
+            $product_cat = urldecode($_GET['product_catagory']);
+          }
+
+          //this is looking at functions.php and running the code from there
+          getProductMainButtons($conn, $product_cat);
+           ?>
+
+
         </div>
         <div class="col-md-3 border">
 
               <?php include 'order_summary.php'; ?>
+
 
         </div>
 

@@ -31,25 +31,25 @@ session_start();
     <div class="col">
       <form class="" action="actions/login_action.php" method="POST">
       <div class="col text-center">
-        <input type="button" onmousedown="storeNumber(this)" value="7" class="btn btn-primary btn-lg space col-sm-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="8" class="btn btn-primary btn-lg space col-sm-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="9" class="btn btn-primary btn-lg space col-sm-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="7" class="btn btn-primary btn-sl sm-space col-md-3 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="8" class="btn btn-primary btn-sl sm-space col-sm-3 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="9" class="btn btn-primary btn-sl sm-space col-sm-3 font50">
       </div>
       <div class="col text-center">
-        <input type="button" onmousedown="storeNumber(this)" value="4" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="5" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="6" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="4" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="5" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="6" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
       </div>
       <div class="col text-center">
-        <input type="button" onmousedown="storeNumber(this)" value="1" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="2" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="3" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="1" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="2" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="3" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
       </div>
       <div class="col text-center">
-        <input type="button" onmousedown="clearPassword(this)" value="X" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
-        <input type="button" onmousedown="storeNumber(this)" value="0" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
+        <input type="button" onmousedown="clearPassword(this)" value="X" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
+        <input type="button" onmousedown="storeNumber(this)" value="0" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
 
-        <input id="submit_form_button" name="submit_form_button" type="submit" value="GO" class="btn btn-primary btn-lg space col-md-3 h-40 font50">
+        <input id="submit_form_button" name="submit_form_button" type="submit" value=">" class="btn btn-primary btn-lg sm-space col-md-3 h-40 font50">
 
       </div>
       <div class="col text-center">

@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 if(isset($_POST['submit_form_button'])){
-
+include '../dbconn.php';
   //submit button pressed
 // make a variable out of the password field
-$password = $_POST['form_password'];
+$password = mysqli_escape_string($conn,$_POST['form_password']);
 //check if the password field is empty
 if(empty($password)){
   //what to do if password field is empty
@@ -16,7 +16,7 @@ if(empty($password)){
   exit();
 }else{
   //what to do if password field is not empty
-  include '../dbconn.php';
+
   $sql = "SELECT * FROM pos_usr WHERE usr_pass = '$password'";
   // var_dump($sql);
   $result = $conn->query($sql);
@@ -25,7 +25,9 @@ if(empty($password)){
   if ($row){
     //what to do if rows are found
     $_SESSION['usr_name'] = $row['usr_name'];
+    $_SESSION['usr_admin'] = $row['usr_level'];
     header("Location: ../home.php?logon=success");
+
   }else {
     //what to do if no rows are found=
     // echo "<div class='alert alert-warning'>No Rows Found</div>";

@@ -2,7 +2,7 @@
 
 $trans_id = '3';
 
-$sql = "SELECT pos_basket.sale_line_id, pos_pr.product_name, pos_pr.product_price
+$sql = "SELECT pos_basket.sale_line_id, pos_pr.product_name, pos_pr.product_price, pos_pr.product_qty
 FROM pos_basket
 INNER JOIN pos_pr
 ON pos_basket.product_id=pos_pr.product_id

@@ -16,11 +16,11 @@ if ($product_name ==""){
 
   $sql = "INSERT INTO pos_pr (product_name, product_price, product_catagory, product_qty) VALUES ('$product_name', '$product_price', '$product_catagory', '$product_qty')";
 
-  if(mysqli_query(connectDB(), $sql)){
+  if(mysqli_query($conn, $sql)){
     echo "Records added";
   }else{
     echo "Something went wrong adding the product";
   }
-  mysqli_close(connectDB());
+  mysqli_close($conn);
     }
  ?>

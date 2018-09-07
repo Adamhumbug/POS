@@ -1,18 +1,27 @@
+<?php
+Session_start();
+if(isset($_SESSION['usr_name'])){
+echo "User = ". $_SESSION['usr_name'] . "<br/>";
+}else{
+  header("Location:index.php");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
-products page
 <?php include '_header.php'; ?>
 
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2 border">
-          <?php include '_nav.php'; ?>
+          <?php include 'actions/show_product_catagory_sidebar_buttons_action.php'; ?>
+          <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
         </div>
         <div class="col-md-8 border">
 
-<!--New procuct stuff goes here-->
+<!--New product stuff goes here-->
 <?php
 
 
@@ -27,6 +36,7 @@ if($result = mysqli_query($conn, $sql)){
     echo "<th onclick='sortTable(2)'>Product Price</th>";
     echo "<th onclick='sortTable(3)'>Product Catagory</th>";
     echo "<th onclick='sortTable(4)'>Product Qty</th>";
+    echo "<th>Actions</th>";
     echo "</tr>";
 
     while($row = mysqli_fetch_array($result)){
@@ -36,6 +46,7 @@ if($result = mysqli_query($conn, $sql)){
       echo "<td>" . $row['product_price'] . "</td>";
       echo "<td>" . $row['product_catagory'] . "</td>";
       echo "<td>" . $row['product_qty'] . "</td>";
+      echo "<td><a href='action/action.php?DeleteProductID=" . $row['product_id'] . "'>Delete</a></td>";
       echo "</tr>";
 
     }
