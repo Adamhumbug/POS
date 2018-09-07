@@ -14,8 +14,9 @@ if(!isset($_SESSION['usr_name'])){
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/custom.css">
-<?php include "actions/functions.php"?>
+<?php include "actions/functions.php";?>
 </head>
+
 
 <body>
 

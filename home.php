@@ -3,14 +3,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
-
-<br>
 <?php include '_header.php'; ?>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2 border">
-          <?php include 'actions/show_product_catagory_sidebar_buttons_action.php'; ?>
+          <?php showSideBarProductButtons($conn); ?>
           <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
         </div>
         <div class="col-md-7 border">

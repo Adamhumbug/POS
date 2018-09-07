@@ -16,7 +16,7 @@ echo "User = ". $_SESSION['usr_name'] . "<br/>";
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2 border">
-          <?php include 'actions/show_product_catagory_sidebar_buttons_action.php'; ?>
+          <?php include 'actions/show_product_catagory_sidebar_buttons_action.php';?>
           <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
         </div>
         <div class="col-md-8 border">

@@ -17,7 +17,7 @@ session_start();
    window.onload = function passwordFocus(){
        document.getElementById("form_password").focus();
    };
-   </script>
+   </script> 
 </head>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
