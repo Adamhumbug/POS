@@ -13,8 +13,7 @@ if(!isset($_SESSION['usr_name'])){
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2 border">
-          <?php include 'actions/sidebar_buttons_action.php';?>
-          <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
+          <?php include '_nav.php'; ?>
         </div>
         <div class="col-md-8 border">
 
@@ -43,7 +42,12 @@ if($result = mysqli_query($conn, $sql)){
       echo "<td>" . $row['product_price'] . "</td>";
       echo "<td>" . $row['product_catagory'] . "</td>";
       echo "<td>" . $row['product_qty'] . "</td>";
-      echo "<td><a href='action/action.php?DeleteProductID=" . $row['product_id'] . "'>Delete</a></td>";
+
+if($_SESSION['usr_level'] == '1'){
+  echo "<td><a href='actions/actions.php?DeleteProductID=" . $row['product_id'] . "'>Delete</a></td>";
+}
+
+      
       echo "</tr>";
 
     }

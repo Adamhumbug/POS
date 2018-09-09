@@ -22,9 +22,12 @@ if(!isset($_SESSION['usr_name'])){
 
 <div class="alert alert-danger">
     <div class="text-right">
+      <?php   print_r($_SESSION); ?>
     <?php echo $_SESSION['usr_name'];?>
-    <?php if ($_SESSION['usr_admin']='1'){
+    <?php if ($_SESSION['usr_level']=='1'){
       echo '- Admin';
+    }else{
+      echo '- User';
     } ?>
   </div>
 </div>

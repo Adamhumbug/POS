@@ -25,14 +25,13 @@ if(empty($password)){
   if ($row){
     //what to do if rows are found
     $_SESSION['usr_name'] = $row['usr_name'];
-    $_SESSION['usr_admin'] = $row['usr_level'];
+    $_SESSION['usr_level'] = $row['usr_level'];
     header("Location: ../home.php?logon=success");
 
   }else {
-    //what to do if no rows are found=
-    // echo "<div class='alert alert-warning'>No Rows Found</div>";
-    // var_dump($result);
-    // var_dump($row);
+    header("Location: ../index.php");
+
+
 
   }
 

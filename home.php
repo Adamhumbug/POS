@@ -7,9 +7,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2 border">
-        <?php include 'actions/sidebar_buttons_action.php' ?>
-        <a class="col-md-12 btn btn-warning tb-space" href="product_list.php">Products</a>
-        <a class="col-md-12 btn btn-danger tb-space" href="actions/logoff_actions.php">LOG OFF</a>
+        <?php include '_nav.php' ?>
+
+
       </div>
       <div class="col-md-7 border">
         <?php
