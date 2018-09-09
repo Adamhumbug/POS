@@ -1,22 +1,17 @@
 <?php
 include '../dbconn.php';
 
-if (isset($_REQUEST['new_product_submit'])) {
+if (isset($_REQUEST['add_to_basket_submit'])) {
 
-$product_name = $_POST['product_name'];
-$product_price = $_POST['product_price'];
-$product_catagory = $_POST['product_catagory'];
-$product_qty = $_POST['product_qty'];
+$basket_product_id = $_POST['basket_product_id'];
 
-if ($product_name ==""){
-  echo "Product name must be filled";
-  exit();
-}
 
-  $sql = "INSERT INTO pos_pr (product_name, product_price, product_catagory, product_qty) VALUES ('$product_name', '$product_price', '$product_catagory', '$product_qty')";
+
+  $sql = "INSERT INTO pos_basket (product_id) VALUES ('$basket_product_id')";
 
   if(mysqli_query($conn, $sql)){
     echo "Records added";
+    header("Location:home.php");
   }else{
     echo "Something went wrong adding the product";
   }
