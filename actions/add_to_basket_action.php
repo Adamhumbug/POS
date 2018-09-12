@@ -1,6 +1,8 @@
 <?php
 include '../dbconn.php';
 
+//have a look at the database, may need to rethink this completely
+
 if (isset($_REQUEST['add_to_basket_submit'])) {
 
 $basket_product_id = $_POST['basket_product_id'];

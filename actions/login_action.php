@@ -17,7 +17,7 @@ if(empty($password)){
 }else{
   //what to do if password field is not empty
 
-  $sql = "SELECT * FROM pos_usr WHERE usr_pass = '$password'";
+    $sql = "SELECT * FROM pos_usr WHERE usr_pass = '$password'";
   // var_dump($sql);
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
@@ -26,7 +26,26 @@ if(empty($password)){
     //what to do if rows are found
     $_SESSION['usr_name'] = $row['usr_name'];
     $_SESSION['usr_level'] = $row['usr_level'];
-    header("Location: ../home.php?logon=success");
+
+    
+   
+  $sql = "SELECT  
+             MAX(transaction_id) as maxid
+           FROM transaction_log";
+  $result = $conn->query($sql);
+  $value = $result->fetch_object();
+  $_SESSION['transaction_id'] = $value->maxid+1;
+
+  $newtransid = $_SESSION['transaction_id'];
+
+  $sql ="INSERT INTO transaction_log (transaction_id) VALUES ('$newtransid')";
+  //this actually runs the above
+  (mysqli_query($conn, $sql));
+
+
+  
+
+ header("Location: ../home.php?logon=success");
 
   }else {
     header("Location: ../index.php");
