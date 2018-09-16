@@ -5,14 +5,14 @@ error_reporting(E_ALL);
 
 session_start();
 if(isset($_POST['submit_form_button'])){
-include 'dbconn.php';
+include '../includes/dbconn.php';
   //submit button pressed
 // make a variable out of the password field
 $password = mysqli_escape_string($conn,$_POST['form_password']);
 //check if the password field is empty
 if(empty($password)){
   //what to do if password field is empty
-  header("Location: index.php?login=nopass");
+  header("Location: ../index.php?login=nopass");
   exit();
 }else{
   //what to do if password field is not empty
@@ -45,10 +45,10 @@ if(empty($password)){
 
   
 
- header("Location: home.php?logon=success");
+ header("Location: ../home.php?logon=success");
 
   }else {
-    header("Location: index.php");
+    header("Location: ../index.php");
 
 
 

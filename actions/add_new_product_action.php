@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-include 'dbconn.php';
+include '../includes/dbconn.php';
 
 if (isset($_REQUEST['new_product_submit'])) {
 

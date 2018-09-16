@@ -1,5 +1,7 @@
 <?php
 
+
+
 //this shows the product buttons on the main section of the page
 //this needs the database connection and the variable needed in SQL
 function getProductMainButtons($conn, $product_cat){
@@ -27,6 +29,18 @@ function getProductMainButtons($conn, $product_cat){
 }
 //end of function
 
+// function clearOrphanDbFRows($conn){
+  //select all of the values that only appear once in the db
+//   $sql = "SELECT transaction_id, MIN(transaction_id) as transaction_id
+// FROM transaction_log
+// GROUP BY transaction_id
+// HAVING COUNT(*) = 1";
 
+// if($result = mysqli_query($conn, $sql)){
+//   $row = mysqli_fetch($result);
+//   echo "this";
+// }
+// echo "that";
+// }
 
    

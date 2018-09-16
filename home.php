@@ -67,12 +67,12 @@ $(".main-product-button").submit(function(event){
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <?php include 'dbconn.php'; ?>
-  <?php include '_header.php'; ?>
+  <?php include 'includes/dbconn.php'; ?>
+  <?php include 'includes/_header.php'; ?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2 border height-100">
-        <?php include '_nav.php' ?>
+        <?php include 'includes/_nav.php' ?>
 
 
       </div>
@@ -91,12 +91,12 @@ $(".main-product-button").submit(function(event){
         ?>
       </div>
       <div class="col-md-3 border">
-        <?php include 'order_summary.php'; ?>
+        <?php include 'includes/order_summary.php'; ?>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <?php include '_footer.php'; ?>
+        <?php include 'includes/_footer.php'; ?>
       </div>
     </div>
   </div>
