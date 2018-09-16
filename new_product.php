@@ -1,12 +1,6 @@
-<?php
-Session_start();
-if(isset($_SESSION['usr_name'])){
-echo "User = ". $_SESSION['usr_name'] . "<br/>";
-}else{
-  header("Location:index.php");
-
-}
-?>
+<?php if (!isset($_SESSION)) {
+  session_start();
+}  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
@@ -15,9 +9,9 @@ echo "User = ". $_SESSION['usr_name'] . "<br/>";
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2 border">
-          <?php showSideBarProductButtons($sql); ?>
-          <a class="col-md-12 btn btn-danger tb-space" href="product_list.php">Products</a>
+        <div class="col-md-2 border height-100">
+          <?php include '_nav.php'; ?>
+
         </div>
         <div class="col-md-8 border">
 

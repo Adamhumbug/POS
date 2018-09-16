@@ -7,7 +7,7 @@
   $firstarray = array();
 
       while($row = mysqli_fetch_array($result)){
-        echo "<a href=home.php?product_catagory=" . urlencode($row['product_catagory']) ."><div class='col-md-12 btn btn-primary tb-space'>" . $row['product_catagory'] . "</div></a>";
+        echo "<a href=home.php?product_catagory=" . urlencode($row['product_catagory']) ."><div class='col-md-12 btn btn-lg btn-primary tb-space'>" . $row['product_catagory'] . "</div></a>";
 
       //below - $prods becomes every product one at a time as it is in while
         $prods =$row['product_catagory'];
@@ -30,11 +30,10 @@ $firstproduct=$firstarray[0];
  ?>
 
  
-<?php include 'actions/sidebar_buttons_action.php';?>
-	<a class="col-md-12 btn btn-warning tb-space" href="product_list.php">Products</a>
+	<a class="col-md-12 btn btn-lg btn-warning tb-space" href="product_list.php">Stock</a>
  <?php    
-if($_SESSION['usr_level']=="1"){
-	echo "<a class='col-md-12 btn btn-primary tb-space'>Admin</a>";
+if($_SESSION['usr_level']=="1" || "10"){
+	echo "<a href='admin_panel.php' class='col-md-12 btn btn-lg btn-primary tb-space'>Admin</a>";
 }
 ?>
 

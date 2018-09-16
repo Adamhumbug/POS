@@ -5,14 +5,14 @@ error_reporting(E_ALL);
 
 session_start();
 if(isset($_POST['submit_form_button'])){
-include '../dbconn.php';
+include 'dbconn.php';
   //submit button pressed
 // make a variable out of the password field
 $password = mysqli_escape_string($conn,$_POST['form_password']);
 //check if the password field is empty
 if(empty($password)){
   //what to do if password field is empty
-  header("Location: ../index.php?login=nopass");
+  header("Location: index.php?login=nopass");
   exit();
 }else{
   //what to do if password field is not empty
@@ -38,17 +38,17 @@ if(empty($password)){
 
   $newtransid = $_SESSION['transaction_id'];
 
-  $sql ="INSERT INTO transaction_log (transaction_id) VALUES ('$newtransid')";
+  $sql ="INSERT INTO transaction_log (transaction_id, transaction_status) VALUES ('$newtransid', 'open')";
   //this actually runs the above
   (mysqli_query($conn, $sql));
 
 
   
 
- header("Location: ../home.php?logon=success");
+ header("Location: home.php?logon=success");
 
   }else {
-    header("Location: ../index.php");
+    header("Location: index.php");
 
 
 
@@ -59,5 +59,5 @@ if(empty($password)){
 }
 ?>
 <head>
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>

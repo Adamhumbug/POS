@@ -11,7 +11,7 @@ function getProductMainButtons($conn, $product_cat){
     if(mysqli_num_rows($result) > 0){
       echo "<form method='post' action='actions/add_to_basket_action.php' id='add_product_to_basket_form'>";
       while($row = mysqli_fetch_array($result)){
-        echo "<div name='poduct' id='productID".$row['product_id']."' class='col-md-2 btn btn-primary btn-lg space' value='". $row['product_id'] ."'>". $row['product_name'] . "<br/> £" . $row['product_price'] ."</div>";
+        echo "<button onclick='add_to_translog' name='product" .$row['product_id']. "' id='productID".$row['product_id']."' class='main-product-button col-md-2 btn btn-primary btn-lg space' value='". $row['product_id'] ."'>". $row['product_name'] . "<br/> £" . $row['product_price'] ."</button>";
       }
       echo "<br>
               <input name='basket_product_id' id='basket_product_id' type='text'>
@@ -29,3 +29,4 @@ function getProductMainButtons($conn, $product_cat){
 
 
 
+   

@@ -1,9 +1,15 @@
 <?php
-Session_start();
+
 if(!isset($_SESSION['usr_name'])){
   header("Location:index.php");
 }
+if (!isset($_SESSION)) {
+  session_start();
+}
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 ?>
@@ -13,7 +19,7 @@ if(!isset($_SESSION['usr_name'])){
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="../css/custom.css">
 <?php include "actions/functions.php";?>
 </head>
 
@@ -24,18 +30,18 @@ if(!isset($_SESSION['usr_name'])){
     <div class="text-right">
       <?php   print_r($_SESSION); ?>
     <?php echo $_SESSION['usr_name'];?>
-    <?php if ($_SESSION['usr_level']=='1'){
-      echo '- Admin';
+    <?php 
+    if ($_SESSION['usr_level']=='0'){
+      echo ' - User';
     }else{
-      echo '- User';
-    } ?>
+      if($_SESSION['usr_level']=='1'){
+        echo ' - Admin';
+      }else{
+        if($_SESSION['usr_level']=='10'){
+          echo ' - SUPER USER';
+        }
+      }
+    } 
+      ?>
   </div>
 </div>
-
-<?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-?>

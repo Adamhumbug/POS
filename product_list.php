@@ -1,9 +1,7 @@
-<?php
-Session_start();
-if(!isset($_SESSION['usr_name'])){
-  header("Location:index.php");
-}
-?>
+<?php if (!isset($_SESSION)) {
+  session_start();
+} ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include 'dbconn.php'; ?>
@@ -12,7 +10,7 @@ if(!isset($_SESSION['usr_name'])){
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2 border">
+        <div class="col-md-2 border height-100">
           <?php include '_nav.php'; ?>
         </div>
         <div class="col-md-8 border">
@@ -37,14 +35,14 @@ if($result = mysqli_query($conn, $sql)){
 
     while($row = mysqli_fetch_array($result)){
       echo "<tr>";
-      echo "<td>" . $row['product_id'] . "</td>";
+      echo "<td class='products_table_cell'>" . $row['product_id'] . "</td>";
       echo "<td>" . $row['product_name'] . "</td>";
       echo "<td>" . $row['product_price'] . "</td>";
       echo "<td>" . $row['product_catagory'] . "</td>";
       echo "<td>" . $row['product_qty'] . "</td>";
 
 if($_SESSION['usr_level'] == '1'){
-  echo "<td><a href='actions/actions.php?DeleteProductID=" . $row['product_id'] . "'>Delete</a></td>";
+  echo "<td><button class='btn btn-primary' onclick='#'>Actions</button></td>";
 }
 
       

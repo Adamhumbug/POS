@@ -1,7 +1,6 @@
-<?php
-session_start();
-?>
-
+<?php if (!isset($_SESSION)) {
+  session_start();
+} ?>
 <head>
   <script language='javascript'>
   function storeNumber( number )
