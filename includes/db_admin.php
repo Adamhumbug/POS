@@ -3,6 +3,29 @@
 </form>
 
 
+
+
+<script>
+	 function clearOrphanDbFRows($conn){
+	 	<?php
+	 	include 'includes/dbconn.php';
+ // select all of the values that only appear once in the db
+   $sql = "SELECT transaction_id, MIN(transaction_id) as transaction_id
+ FROM transaction_log
+ GROUP BY transaction_id
+ HAVING COUNT(*) = 1";
+
+ if($result = mysqli_query($conn, $sql)){
+   $row = mysqli_fetch($result);
+   echo "this";
+ }else{
+ 	echo "that";
+ }
+ ?>
+ }
+
+   
+</script>
 <?php 
 
 
@@ -23,3 +46,4 @@
  ?>
 
 
+ 

@@ -1,23 +1,17 @@
 <?php
 include '../includes/dbconn.php';
 
+echo "we got here";
+
 //have a look at the database, may need to rethink this completely
 
-if (isset($_REQUEST['main-product-button'])) {
+$stmt = $conn->prepare("INSERT INTO transaction_log (product_id) VALUES (?)");
+$stmt->bind_param("s", $basket_product_id);
+//this is the name of the button
+$basket_product_id = $_POST['productSubmitButton'];
 
-$basket_product_id = $_POST['action'];
+$stmt->execute();
 
-
-
-  $sql = "INSERT INTO transaction_log (product_id) VALUES ('$basket_product_id')";
-
-  if(mysqli_query($conn, $sql)){
-    echo "Records added";
-  }else{
-    echo "Something went wrong adding the product";
-  }
-  mysqli_close($conn);
-    }
-
-
- ?>
+$stmt->close();
+$conn->close();
+?>
